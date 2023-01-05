@@ -195,8 +195,8 @@ const meetings = [
 
 const sortMeetingsByDay = (arr) => arr.sort((a,b) => {
   const daysArray = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
-  a = daysArray.indexOf(a.dayOfWeek) + 1;
-  b = daysArray.indexOf(b.dayOfWeek) + 1;
+  a = daysArray.indexOf(a.dayOfWeek);
+  b = daysArray.indexOf(b.dayOfWeek);
   return a-b;
 
 });
@@ -217,8 +217,8 @@ const sortSchedule = (arr) => arr.sort((a,b) => {
   } else if (a.dayOfWeek === b.dayOfWeek) {
     return a.start - b.start;
   } else {
-    a = daysArray.indexOf(a.dayOfWeek) + 1;
-    b = daysArray.indexOf(b.dayOfWeek) + 1;
+    a = daysArray.indexOf(a.dayOfWeek);
+    b = daysArray.indexOf(b.dayOfWeek);
     return a-b;
   }
 });
