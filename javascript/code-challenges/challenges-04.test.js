@@ -194,29 +194,11 @@ const meetings = [
 ];
 
 const sortMeetingsByDay = (arr) => arr.sort((a,b) => {
-  if (a.dayOfWeek === 'Monday') {
-    a = 1;
-  } else if (a.dayOfWeek === 'Tuesday') {
-    a = 2;
-  } else if (a.dayOfWeek === 'Wednesday') {
-    a = 3;
-  } else if (a.dayOfWeek === 'Thursday') {
-    a = 4;
-  } else if (a.dayOfWeek === 'Friday') {
-    a = 5;
-  }
-  if (b.dayOfWeek === 'Monday') {
-    b = 1;
-  } else if (b.dayOfWeek === 'Tuesday') {
-    b = 2;
-  } else if (b.dayOfWeek === 'Wednesday') {
-    b = 3;
-  } else if (b.dayOfWeek === 'Thursday') {
-    b = 4;
-  } else if (b.dayOfWeek === 'Friday') {
-    b = 5;
-  }
+  const daysArray = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
+  a = daysArray.indexOf(a.dayOfWeek) + 1;
+  b = daysArray.indexOf(b.dayOfWeek) + 1;
   return a-b;
+
 });
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 13 - Stretch Goal
@@ -228,9 +210,18 @@ Sort the meetings in the order that they start. If two meetings start at the sam
 You DO NOT need to use your solution to Challenge 12 in completing Challenge 13.
 ------------------------------------------------------------------------------------------------ */
 
-const sortSchedule = (arr) => {
-  // Solution code here...
-};
+const sortSchedule = (arr) => arr.sort((a,b) => {
+  const daysArray = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
+  if (a.dayOfWeek === b.dayOfWeek && a.start === b.start) {
+    return (a.end-a.start) - (b.end - b.start);
+  } else if (a.dayOfWeek === b.dayOfWeek) {
+    return a.start - b.start;
+  } else {
+    a = daysArray.indexOf(a.dayOfWeek) + 1;
+    b = daysArray.indexOf(b.dayOfWeek) + 1;
+    return a-b;
+  }
+});
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
