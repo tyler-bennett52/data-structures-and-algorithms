@@ -95,7 +95,12 @@ For example, getStatName(snorlaxData.stats, 50) will return ['special-defense', 
 ------------------------------------------------------------------------------------------------ */
 
 const getStatName = (arr, minBaseStat) => {
-  // Solution code here...
+  const tempArray = [];
+  const highEnough = arr.filter(item => item.baseStat > minBaseStat);
+  for (let move of highEnough) {
+    tempArray.push(move.stat.name);
+  }
+  return tempArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -147,9 +152,7 @@ const characters = [
   },
 ];
 
-const getCharactersWithoutChildren = (arr) => {
-  // Solution code here...
-};
+const getCharactersWithoutChildren = (arr) => arr.filter(item => item.children === undefined);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 9 - Stretch Goal
@@ -160,9 +163,16 @@ For example: evenOddNumericValues(['Gregor', 2, 4, 1]) returns ['even', 'even', 
 ------------------------------------------------------------------------------------------------ */
 
 const evenOddNumericValues = (arr) => {
-  // Solution code here...
+  const numbersArray = typeNum(arr);
+  const evenOddArray = numbersArray.map(x => {
+    if (x%2 === 0) {
+      return 'even';
+    } else if (x%2 ===1) {
+      return 'odd';
+    }
+  });
+  return evenOddArray;
 };
-
 /* ------------------------------------------------------------------------------------------------
 TESTS
 
