@@ -70,7 +70,6 @@ Write a function named allHappy that takes in an array of strings and returns a 
 const allHappy = (arr) => {
   let numMatching = arr.reduce((count, cV) => cV.includes(':)') === true ? count + 1 : count, 0);
   return numMatching === arr.length ? true : false;
-
 };
 
 /* ------------------------------------------------------------------------------------------------
