@@ -22,3 +22,4 @@ To run your tests
 
 1 - [Array Reverse](./javascript/401-challenges/array-reverse/README.md)
 2 - [Insert/Shift Array](./javascript/401-challenges/insert-shift-array/README.md)
+3 - [Array Binary Search](./javascript/401-challenges/array-binary-search/README.md)
