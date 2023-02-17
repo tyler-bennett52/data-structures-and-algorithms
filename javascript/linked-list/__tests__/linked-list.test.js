@@ -58,12 +58,78 @@ describe('Linked List', () => {
     expect(linked.includes('cucumber')).toBe(false);
   });
 
+  it('should be able to append 1 node', () => {
+    const linked = new LinkedList;
+    linked.append('apple');
+    expect(linked.length).toEqual(1);
+  });
+  it('should be able to append multiple nodes', () => {
+    const linked = new LinkedList;
+    linked.append('apple');
+    linked.append('banana');
+    const linkedString = linked.toString();
+    expect(linkedString).toBe('{ apple } -> { banana } -> NULL');
+  });
+  it('should be able to before the middle Node', () => {
+    const linked = new LinkedList;
+    linked.append('apple');
+    linked.append('banana');
+    linked.append('cherry');
+    linked.insertBefore('banana', 'watermelon');
+    const linkedString = linked.toString();
+    expect(linkedString).toBe('{ apple } -> { watermelon } -> { banana } -> { cherry } -> NULL');
+  });
+
+  it('Can insert before the first node', () => {
+    const linked = new LinkedList;
+    linked.append('apple');
+    linked.append('banana');
+    linked.append('cherry');
+    linked.insertBefore('apple', 'watermelon');
+    const linkedString = linked.toString();
+    expect(linkedString).toBe('{ watermelon } -> { apple } -> { banana } -> { cherry } -> NULL');
+  });
+
+  it('should be able to insert after the middle Node', () => {
+    const linked = new LinkedList;
+    linked.append('apple');
+    linked.append('banana');
+    linked.append('cherry');
+    linked.insertAfter('banana', 'watermelon');
+    const linkedString = linked.toString();
+    expect(linkedString).toBe('{ apple } -> { banana } -> { watermelon } -> { cherry } -> NULL');
+  });
+
+  it('should be able to insert after the last Node', () => {
+    const linked = new LinkedList;
+    linked.append('apple');
+    linked.append('banana');
+    linked.append('cherry');
+    linked.insertAfter('cherry', 'watermelon');
+    const linkedString = linked.toString();
+    expect(linkedString).toBe('{ apple } -> { banana } -> { cherry } -> { watermelon } -> NULL');
+  });
+
+
   it('should have an accurate length property', () => {
     const linked = new LinkedList();
     linked.insert('apple');
     linked.insert('banana');
-    linked.insert('kiwi');
-    expect(linked.length).toEqual(3);
+    linked.insertBefore('banana', 'kiwi');
+    linked.insertAfter('banana', 'mango');
+    linked.append('raspberry');
+    expect(linked.length).toEqual(5);
+  });
+
+  it('should be able to insert before and after searched values and append to end of list', () => {
+    const linked = new LinkedList();
+    linked.insert('apple');
+    linked.insert('banana');
+    linked.insertBefore('apple', 'kiwi');
+    linked.insertAfter('kiwi', 'mango');
+    linked.append('raspberry');
+    let linkedString = linked.toString();
+    expect(linkedString).toEqual('{ banana } -> { kiwi } -> { mango } -> { apple } -> { raspberry } -> NULL');
   });
 
 });
