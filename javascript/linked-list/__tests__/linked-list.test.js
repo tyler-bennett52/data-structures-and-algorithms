@@ -132,4 +132,16 @@ describe('Linked List', () => {
     expect(linkedString).toEqual('{ banana } -> { kiwi } -> { mango } -> { apple } -> { raspberry } -> NULL');
   });
 
+  it('should be able to fetch a value K distance from the tail', () => {
+    const linked = new LinkedList();
+    linked.insert('apple');
+    linked.insert('banana');
+    linked.insertBefore('apple', 'kiwi');
+    linked.insertAfter('kiwi', 'mango');
+    linked.append('raspberry');
+    let fourth = linked.kthFromEnd(9);
+    expect(fourth).toBe('apple');
+    
+  });
+
 });
