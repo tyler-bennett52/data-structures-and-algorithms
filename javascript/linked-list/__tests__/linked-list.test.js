@@ -132,6 +132,14 @@ describe('Linked List', () => {
     expect(linkedString).toEqual('{ banana } -> { kiwi } -> { mango } -> { apple } -> { raspberry } -> NULL');
   });
 
+  // it('should be able to append to an empty list', () => {
+  //   const linked = new LinkedList();
+  //   linked.append('raspberry');
+  //   let linkedString = linked.toString();
+  //   expect(linkedString).toEqual('{ banana } -> { kiwi } -> { mango } -> { apple } -> { raspberry } -> NULL');
+  // });
+
+
   it('should be able to fetch a value K distance from the tail', () => {
     const linked = new LinkedList();
     linked.insert('apple');
@@ -169,6 +177,17 @@ describe('Linked List', () => {
     linked.insert('apple');
     let tooFar = linked.kthFromEnd(-9001);
     expect(tooFar).toBe('K must be an integer above 0');
+  });
+
+  it('merges two lists of the same length', () => {
+    const listA = new LinkedList();
+    const listB = new LinkedList();
+    listA.insert('A2');
+    listA.insert('A1');
+    listB.insert('B2');
+    listB.insert('B1');
+    const listC = listA.zip(listA, listB);
+    expect(listC.toString()).toBe('{ A1 } -> { B1 } -> { A2 } -> { B2 } -> NULL');
   });
 
 });
