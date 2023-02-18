@@ -179,7 +179,7 @@ describe('Linked List', () => {
     expect(tooFar).toBe('K must be an integer above 0');
   });
 
-  it('merges two lists of the same length', () => {
+  it('merges two equally long lists', () => {
     const listA = new LinkedList();
     const listB = new LinkedList();
     listA.insert('A2');
@@ -190,4 +190,15 @@ describe('Linked List', () => {
     expect(listC.toString()).toBe('{ A1 } -> { B1 } -> { A2 } -> { B2 } -> NULL');
   });
 
+  it('merges two lists of different lengths', () => {
+    const listA = new LinkedList();
+    const listB = new LinkedList();
+    listA.insert('2');
+    listA.insert('3');
+    listA.insert('1');
+    listB.insert('9');
+    listB.insert('5');
+    const listC = listA.zip(listA, listB);
+    expect(listC.toString()).toBe('{ 1 } -> { 5 } -> { 3 } -> { 9 } -> { 2 } -> NULL');
+  });
 });
