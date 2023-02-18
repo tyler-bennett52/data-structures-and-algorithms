@@ -97,14 +97,13 @@ class LinkedList {
   kthFromEnd(k) {
     let distanceToEnd = this.length - 1;
     let current = this.head;
-    while(k !== distanceToEnd && k > -1) {
+    if (k > distanceToEnd) {
+      return `List.length===${this.length}, maxK===${distanceToEnd}`;
+    }
+    while (distanceToEnd > k) {
       current = current.next;
       distanceToEnd--;
-    }
-    if (distanceToEnd > -1) {
-      return current.value;
-    }
-    return 'There is no Node that far from the end';
+    } return current.value;
   }
 
   toString() {

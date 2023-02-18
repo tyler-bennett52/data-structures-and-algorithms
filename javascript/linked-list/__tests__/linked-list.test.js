@@ -139,9 +139,8 @@ describe('Linked List', () => {
     linked.insertBefore('apple', 'kiwi');
     linked.insertAfter('kiwi', 'mango');
     linked.append('raspberry');
-    let fourth = linked.kthFromEnd(9);
+    let fourth = linked.kthFromEnd(1);
     expect(fourth).toBe('apple');
-    
   });
 
 });
