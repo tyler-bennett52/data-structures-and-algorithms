@@ -12,4 +12,4 @@ We used a mulitple pointers approach to track the beginning, end and middle of t
 
 ## Attribution
 
-Collaborated with John Chavez and verified our approach with resources from Colt Steele's DSA udemy course. 
+Collaborated with John Chavez and verified our approach with resources from Colt Steele's DSA udemy course.
