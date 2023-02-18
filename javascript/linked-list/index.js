@@ -100,6 +100,9 @@ class LinkedList {
     if (k > distanceToEnd) {
       return `List.length===${this.length}, maxK===${distanceToEnd}`;
     }
+    if (k < 0) {
+      return ('K must be an integer above 0');
+    }
     while (distanceToEnd > k) {
       current = current.next;
       distanceToEnd--;
