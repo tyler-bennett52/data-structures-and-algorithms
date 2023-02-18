@@ -120,15 +120,15 @@ class LinkedList {
     return text + 'NULL';
   }
 
-  zip(listA, listB) {
+  zipLists(listA, listB) {
     let currentA = listA.head;
     let currentB = listB.head;
     const listC = new LinkedList();
-    while (currentB) {
-      listC.append(currentA.value);
-      listC.append(currentB.value);
-      currentA = currentA.next;
-      currentB = currentB.next;
+    while (currentA || currentB) {
+      currentA ? listC.append(currentA.value) : null;
+      currentB ? listC.append(currentB.value) : null;
+      currentA ? currentA = currentA.next : null;
+      currentB ? currentB = currentB.next : null;
     }
     return listC;
   }

@@ -186,7 +186,7 @@ describe('Linked List', () => {
     listA.insert('A1');
     listB.insert('B2');
     listB.insert('B1');
-    const listC = listA.zip(listA, listB);
+    const listC = listA.zipLists(listA, listB);
     expect(listC.toString()).toBe('{ A1 } -> { B1 } -> { A2 } -> { B2 } -> NULL');
   });
 
@@ -198,7 +198,7 @@ describe('Linked List', () => {
     listA.insert('1');
     listB.insert('9');
     listB.insert('5');
-    const listC = listA.zip(listA, listB);
+    const listC = listA.zipLists(listA, listB);
     expect(listC.toString()).toBe('{ 1 } -> { 5 } -> { 3 } -> { 9 } -> { 2 } -> NULL');
   });
 });
