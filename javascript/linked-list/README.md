@@ -26,3 +26,9 @@ insertBefore(searchValue, insertValue) - Find a node with a given value and inse
 insertAfter(searchValue, insertValue) - Find a node with a given value and insert after it. searchValue not found appends the insertValue.
 
 ![Whiteboard from Day 2](./assets/challenge-06.png)
+
+### Day 3 of Linked Lists
+
+kthFromEnd(k) - Pulls the value from whichever node is K away from the tail
+
+![Whiteboard from Day 3](./assets/challenge-07.png)
