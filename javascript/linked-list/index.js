@@ -109,6 +109,18 @@ class LinkedList {
     } return current.value;
   }
 
+  reverse() {
+    let current = this.head;
+    let previous = null;
+    while(current) {
+      let next = current.next;
+      current.next = previous;
+      previous = current;
+      current = next;
+    }
+    this.head = previous;
+  }
+
   toString() {
 
     let current = this.head;

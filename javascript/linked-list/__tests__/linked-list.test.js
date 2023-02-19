@@ -201,4 +201,18 @@ describe('Linked List', () => {
     const listC = listA.zipLists(listA, listB);
     expect(listC.toString()).toBe('{ 1 } -> { 5 } -> { 3 } -> { 9 } -> { 2 } -> NULL');
   });
+
+  it('reverses a linked list\'s  order', () => {
+    const listA = new LinkedList();
+    const listB = new LinkedList();
+    listA.insert('2');
+    listA.insert('3');
+    listA.insert('1');
+    listB.insert('9');
+    listB.insert('5');
+    const listC = listA.zipLists(listA, listB);
+    listC.reverse();
+    expect(listC.toString()).toBe('{ 2 } -> { 9 } -> { 3 } -> { 5 } -> { 1 } -> NULL');
+  });
+
 });
