@@ -65,6 +65,7 @@ class LinkedList {
         return this.length;
       }
     }
+    // If search value is not found insert at end
     current.next = newNode;
     this.length++;
     return this.length;
@@ -91,6 +92,21 @@ class LinkedList {
     current.next = newNode;
     this.length++;
     return this.length;
+  }
+
+  kthFromEnd(k) {
+    let distanceToEnd = this.length - 1;
+    let current = this.head;
+    if (k > distanceToEnd) {
+      return `List.length===${this.length}, maxK===${distanceToEnd}`;
+    }
+    if (k < 0) {
+      return ('K must be an integer above 0');
+    }
+    while (distanceToEnd > k) {
+      current = current.next;
+      distanceToEnd--;
+    } return current.value;
   }
 
   toString() {

@@ -132,4 +132,43 @@ describe('Linked List', () => {
     expect(linkedString).toEqual('{ banana } -> { kiwi } -> { mango } -> { apple } -> { raspberry } -> NULL');
   });
 
+  it('should be able to fetch a value K distance from the tail', () => {
+    const linked = new LinkedList();
+    linked.insert('apple');
+    linked.insert('banana');
+    linked.insertBefore('apple', 'kiwi');
+    linked.insertAfter('kiwi', 'mango');
+    linked.append('raspberry');
+    let fourth = linked.kthFromEnd(1);
+    expect(fourth).toBe('apple');
+  });
+
+  it('Return the only Node if list is 1 Node long', () => {
+    const linked = new LinkedList();
+    linked.insert('apple');
+    let tooFar = linked.kthFromEnd(0);
+    expect(tooFar).toBe('apple');
+  });
+
+  it('returns an exception if k > length', () => {
+    const linked = new LinkedList();
+    linked.insert('apple');
+    let tooFar = linked.kthFromEnd(9001);
+    expect(tooFar).toBe('List.length===1, maxK===0');
+  });
+
+  it('returns an exception if k = length', () => {
+    const linked = new LinkedList();
+    linked.insert('apple');
+    let tooFar = linked.kthFromEnd(1);
+    expect(tooFar).toBe('List.length===1, maxK===0');
+  });
+
+  it('returns an exception if k < 0', () => {
+    const linked = new LinkedList();
+    linked.insert('apple');
+    let tooFar = linked.kthFromEnd(-9001);
+    expect(tooFar).toBe('K must be an integer above 0');
+  });
+
 });
