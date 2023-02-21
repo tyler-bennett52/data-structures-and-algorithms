@@ -19,7 +19,7 @@ class PsuedoQueue {
   }
 
   dequeue() {
-    this.stack1.pop();
+    return this.stack1.pop();
   }
 }
 

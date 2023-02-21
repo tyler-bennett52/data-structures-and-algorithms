@@ -40,6 +40,10 @@ print() - Troubleshooting method that concatenates all values into a string.
 
 ### Day 2 of Stacks and Queues
 
-PsuedoQueue class featuring 2 methods
+PsuedoQueue class featuring 2 methods:
 
-![PseudoQ whiteboard]()
+Enqueue(value) - Completely moves stack1 to stack2, pushes value to stack1, then moves all of stack2 back to Stack1.
+
+Dequeue() - Enqueue has already placed values in FIFO order, so Dequeue just executes stack1.pop().
+
+![PseudoQ whiteboard](./assets/challenge-11%20(1).png)

@@ -13,7 +13,7 @@ it('PsuedoQ can dequeue', () => {
   pQ.enqueue(1);
   pQ.enqueue(2);
   pQ.enqueue(3);
-  pQ.dequeue();
+  expect(pQ.dequeue()).toBe(1);
   expect(pQ.stack1.print()).toBe('2 -> 3 -> ');
 });
 
