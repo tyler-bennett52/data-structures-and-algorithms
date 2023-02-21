@@ -17,15 +17,29 @@ I made small but I think useful changes to the bare-bones implementation done in
 #### Stack
 
 push(value) - Adds a value to the top of the stack.
+
 pop(value) - Removes a value from the top of the stack.
+
 peek() - Retrieves a value from the top of the stack without removing it.
+
 isEmpty() - Returns true/false based on whether or not there are any values in the stack.
+
 print() - Troubleshooting method that concatenates all values into a string.
 
 #### Queue
 
 enqueue(value) - Adds a value to the front of the queue.
+
 dequeue(value) - Removes a value from the front of the queue.
+
 peek() - Retrieves a value from the front of the queue without removing it.
+
 isEmpty() - Returns true/false based on whether or not there are any values in the queue.
+
 print() - Troubleshooting method that concatenates all values into a string.
+
+### Day 2 of Stacks and Queues
+
+PsuedoQueue class featuring 2 methods
+
+![PseudoQ whiteboard]()
