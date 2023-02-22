@@ -47,3 +47,13 @@ Enqueue(value) - Completely moves stack1 to stack2, pushes value to stack1, then
 Dequeue() - Enqueue has already placed values in FIFO order, so Dequeue just executes stack1.pop().
 
 ![PseudoQ whiteboard](./assets/challenge-11%20(1).png)
+
+### Day 3 of Stacks and Queeus
+
+AnimalShelter class featuring 2 methods:
+
+Enqueue(Animal) - Moves Animal to species specific queue.
+
+Dequeue(preference) - Dequeues from appropriate queue based on user input
+
+![PseudoQ whiteboard](./assets/challenge-12.png)
