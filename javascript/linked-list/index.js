@@ -1,7 +1,7 @@
 'use strict';
 
 class Node {
-  constructor(value, next=null) {
+  constructor(value, next = null) {
     this.value = value;
     this.next = next;
   }
@@ -15,12 +15,12 @@ class LinkedList {
   }
 
   append(value) {
-    if(!this.head) {
+    if (!this.head) {
       this.insert(value);
       return this.length;
     }
     let current = this.head;
-    while(current.next) {
+    while (current.next) {
       current = current.next;
     }
     current.next = new Node(value);
@@ -31,7 +31,7 @@ class LinkedList {
   includes(value) {
     let current = this.head;
     if (current.value === value) return true;
-    while(current.next) {
+    while (current.next) {
       if (current.next.value === value) return true;
       current = current.next;
     }
@@ -76,10 +76,10 @@ class LinkedList {
       this.insert(insertValue);
       return this.length;
     }
-    let newNode = new Node (insertValue);
+    let newNode = new Node(insertValue);
     let current = this.head;
     while (current.next) {
-      if(current.next.value === searchValue) {
+      if (current.next.value === searchValue) {
         let oldNext = current.next;
         current.next = newNode;
         newNode.next = oldNext;
@@ -113,11 +113,24 @@ class LinkedList {
 
     let current = this.head;
     let text = '';
-    while(current) {
+    while (current) {
       text += `{ ${current.value} } -> `;
       current = current.next;
     }
     return text + 'NULL';
+  }
+
+  zipLists(listA, listB) {
+    let currentA = listA.head;
+    let currentB = listB.head;
+    const listC = new LinkedList();
+    while (currentA || currentB) {
+      currentA ? listC.append(currentA.value) : null;
+      currentB ? listC.append(currentB.value) : null;
+      currentA ? currentA = currentA.next : null;
+      currentB ? currentB = currentB.next : null;
+    }
+    return listC;
   }
 }
 

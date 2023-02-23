@@ -32,3 +32,9 @@ insertAfter(searchValue, insertValue) - Find a node with a given value and inser
 kthFromEnd(k) - Pulls the value from whichever node is K away from the tail
 
 ![Whiteboard from Day 3](./assets/challenge-07.png)
+
+### Day 4 of Linked Lists
+
+zipLists(listA, listB) - Accepts two lists and merges them into one keeping an order of A1, B1, A2, B2.
+
+![Whiteboard from Day 3](./assets/challenge-08.png)
