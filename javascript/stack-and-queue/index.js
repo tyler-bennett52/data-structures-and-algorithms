@@ -115,4 +115,10 @@ class Queue {
 
 
 
+
+const myStack = new Stack();
+
+myStack.push(1);
+myStack.print();
+
 module.exports = { Stack, Queue };

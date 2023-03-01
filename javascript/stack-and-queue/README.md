@@ -48,7 +48,7 @@ Dequeue() - Enqueue has already placed values in FIFO order, so Dequeue just exe
 
 ![PseudoQ whiteboard](./assets/challenge-11%20(1).png)
 
-### Day 3 of Stacks and Queeus
+### Day 3 of Stacks and Queues
 
 AnimalShelter class featuring 2 methods:
 
@@ -57,3 +57,9 @@ Enqueue(Animal) - Moves Animal to species specific queue.
 Dequeue(preference) - Dequeues from appropriate queue based on user input
 
 ![PseudoQ whiteboard](./assets/challenge-12.png)
+
+### Day 4 of Stacks and Queues
+
+validateBrackets(string) - Accepts a string and determines if opening and closing brackets constitute a match.
+
+![PseudoQ whiteboard](./assets/challenge-13.png)
