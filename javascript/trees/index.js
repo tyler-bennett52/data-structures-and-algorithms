@@ -1,0 +1,91 @@
+'use strict';
+
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.left = null;
+    this.right = null;
+  }
+}
+
+
+class BinaryTree {
+  constructor() {
+    this.root = null;
+  }
+  preOrder() {
+    const results = [];
+    const traverse = (node) => {
+      results.push(node.value);
+      if (node.left) traverse(node.left);
+      if (node.right) traverse(node.right);
+    };
+    traverse(this.root);
+    return results;
+  }
+
+  inOrder() {
+    const results = [];
+    const traverse = (node) => {
+      if (node.left) traverse(node.left);
+      results.push(node.value);
+      if (node.right) traverse(node.right);
+    };
+    traverse(this.root);
+    return results;
+  }
+
+  postOrder() {
+    const results = [];
+    const traverse = (node) => {
+      if (node.left) traverse(node.left);
+      if (node.right) traverse(node.right);
+      results.push(node.value);
+    };
+    traverse(this.root);
+    return results;
+  }
+}
+
+class BinarySearchTree extends BinaryTree {
+  add(value) {
+    const newNode = new Node(value);
+    console.log(this);
+    if (!this.root) {
+      this.root = newNode;
+      return this;
+    }
+    let current = this.root;
+    while (current) {
+      if (value === current.value) return this;
+
+      if (value < current.value) {
+        if (!current.left) {
+          current.left = newNode;
+          return this;
+        }
+        else { current = current.left; }
+      }
+      if (value > current.value) {
+        if (!current.right) {
+          current.right = newNode;
+          return this;
+        }
+        else { current = current.right; }
+      }
+    }
+  }
+
+  contains(value) {
+    let current = this.root;
+    while (current) {
+      if (value === current.value) return true;
+      if (value < current.value) current = current.left;
+      if (value > current.value) current = current.right;
+
+    } return false;
+  }
+}
+
+
+module.exports = { BinaryTree, BinarySearchTree, Node };
