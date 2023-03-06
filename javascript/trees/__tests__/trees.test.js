@@ -57,6 +57,22 @@ describe('Binary Tree', () => {
     expect(BST.contains(12)).toBeFalsy();
   });
 
+  it('Can find the max of a given tree', () => {
+    const tree = new BinaryTree();
+    expect(tree.max()).toBeNull();
+    tree.root = new Node(10);
+    expect(tree.max()).toBe(10);
+    tree.root.left = new Node(5);
+    expect(tree.max()).toBe(10);
+    tree.root.right = new Node(15);
+    expect(tree.max()).toBe(15);
+    tree.root.left.left = new Node(1);
+    expect(tree.max()).toBe(15);
+    tree.root.left.right = new Node(8);
+    expect(tree.max()).toBe(15);
+    tree.root.right.right = new Node(17);
+    expect(tree.max()).toBe(17);
+  });
 
 });
 
