@@ -13,6 +13,20 @@ class BinaryTree {
   constructor() {
     this.root = null;
   }
+
+  breadthFirst() {
+    const results = [];
+    const queue = [];
+    if (!this.root) return null;
+    queue.push(this.root);
+    while (queue.length > 0) {
+      if (queue[0].left) queue.push(queue[0].left);
+      if (queue[0].right) queue.push(queue[0].right);
+      results.push(queue.shift().value);
+
+    } return results;
+  }
+
   preOrder() {
     const results = [];
     const traverse = (node) => {
@@ -62,7 +76,6 @@ class BinaryTree {
 class BinarySearchTree extends BinaryTree {
   add(value) {
     const newNode = new Node(value);
-    console.log(this);
     if (!this.root) {
       this.root = newNode;
       return this;

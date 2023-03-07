@@ -44,8 +44,8 @@ describe('Binary Tree', () => {
   });
 
   it('Can return a collection from postorder traversal', () => {
-    const order = testTree.preOrder();
-    expect(order).toEqual([10, 5, 1, 8, 15, 17]);
+    const order = testTree.postOrder();
+    expect(order).toEqual([1, 8, 5, 17, 15, 10]);
   });
 
   it('BST knows what values it contains', () => {
@@ -72,6 +72,11 @@ describe('Binary Tree', () => {
     expect(tree.max()).toBe(15);
     tree.root.right.right = new Node(17);
     expect(tree.max()).toBe(17);
+  });
+
+  it('Can do a breadth first search', () => {
+    let results = testTree.breadthFirst();
+    expect(results).toEqual([10, 5, 15, 1, 8, 17]);
   });
 
 });
