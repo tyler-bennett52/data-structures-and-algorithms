@@ -28,10 +28,16 @@ add(value) - Inserts a value into a tree while maintaining its sort (left is les
 
 includes(value) - Searches an array for a value and returns true if found, false if not found.
 
-### Day 2 of Stacks and Queues
+### Day 2 of Trees and BSTs
 
 max() - Finds the highest value in a numbers only tree.
 
 ![PseudoQ whiteboard](./assets/challenge-16.png)
+
+### Day 3 of Trees and BSTs
+
+breadthFirst() - Returns an array of all nodes in a tree in the order of left-to-right, top-to-bottom.
+
+![PseudoQ whiteboard](./assets/challenge-17.png)
 
 
