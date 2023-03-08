@@ -5,13 +5,105 @@ class Node {
     this.value = value;
     this.left = null;
     this.right = null;
+    this.children = [];
   }
 }
 
 
+class KTree {
+  constructor(k) {
+    this.root = null;
+    this.maxChildren = k;
+    this.numNodes = 0;
+  }
+
+  add(value) {
+    const queue = [];
+    let tempNode = new Node(value);
+    if (!this.root) {
+      this.root = tempNode;
+      this.numNodes++;
+      return this;
+    }
+    queue.push(this.root);
+    while (queue.length > 0) {
+      let current = queue.shift();
+      for (let i = 0; i < this.k; i++) {
+        if (!current.children[i]) {
+          current.children[i] = tempNode;
+          this.numNodes++;
+          return this;
+        } else {
+          queue.push(current.children[i]);
+        }
+      }
+    }
+  }
+
+  breadthFirst() {
+    const results = [];
+    if (!this.root) return null;
+    const queue = [];
+    queue.push(this.root);
+    while (queue.length > 0) {
+      let current = queue.unshift();
+      results.push(current.value);
+      for (let i = 0; i < this.k; i++) {
+        if (current.children[i]) {
+          queue.push(current.children[i]);
+        }
+      }
+    } return results;
+  }
+
+  fizzBuzzTree() {
+    let tree = this.breadthFirst();
+    let finalTree = new KTree();
+    let fizzyTree = tree.map((node) => {
+      if (node % 3 === 0 && node % 5 === 0) {
+        return 'FizzBuzz';
+      } else if (node % 3 === 0) {
+        return 'Fizz';
+      } else if (node % 5 === 0) {
+        return 'Buzz';
+      } else {
+        return `${node}`;
+      }
+    }); 
+    for (let value of fizzyTree) {
+      finalTree.add(value);
+    } return finalTree;
+  }
+}
+
 class BinaryTree {
   constructor() {
     this.root = null;
+  }
+
+  add(value) {
+    let tempNode = new Node(value);
+    if (!this.root) {
+      this.root = tempNode;
+      return this;
+    }
+    const queue = [];
+    queue.push(this.root);
+    while (queue.length > 0) {
+      let current = queue.shift();
+      if (!current.left) {
+        current.left = tempNode;
+        return this;
+      } else {
+        queue.push(current.left);
+      }
+      if (!current.right) {
+        current.right = tempNode;
+        return this;
+      } else {
+        queue.push(current.right);
+      }
+    }
   }
 
   breadthFirst() {
@@ -71,6 +163,25 @@ class BinaryTree {
     traverse(this.root);
     return max;
   }
+
+  fizzBuzzTree() {
+    let tree = this.breadthFirst();
+    let finalTree = new BinaryTree();
+    let fizzyTree = tree.map((node) => {
+      if (node % 3 === 0 && node % 5 === 0) {
+        return 'FizzBuzz';
+      } else if (node % 3 === 0) {
+        return 'Fizz';
+      } else if (node % 5 === 0) {
+        return 'Buzz';
+      } else {
+        return `${node}`;
+      }
+    });
+    for (let value of fizzyTree) {
+      finalTree.add(value);
+    } return finalTree;
+  }
 }
 
 class BinarySearchTree extends BinaryTree {
@@ -113,4 +224,16 @@ class BinarySearchTree extends BinaryTree {
 }
 
 
-module.exports = { BinaryTree, BinarySearchTree, Node };
+let testTree = new BinaryTree();
+testTree.add(10);
+testTree.add(1);
+testTree.add(5);
+testTree.add(7);
+testTree.add(9);
+testTree.add(15);
+
+// console.log(testTree);
+console.log(testTree.fizzBuzzTree().breadthFirst());
+
+
+module.exports = { BinaryTree, BinarySearchTree, Node, KTree };
