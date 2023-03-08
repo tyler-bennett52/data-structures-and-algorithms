@@ -40,4 +40,6 @@ breadthFirst() - Returns an array of all nodes in a tree in the order of left-to
 
 ![PseudoQ whiteboard](./assets/challenge-17.png)
 
+## Attribution
 
+Collaborated with Jordan Covington and Joseph Davitt. Also relied on examples provided by educational materials from Colt Steele.
