@@ -40,6 +40,12 @@ breadthFirst() - Returns an array of all nodes in a tree in the order of left-to
 
 ![PseudoQ whiteboard](./assets/challenge-17.png)
 
+### Day 4 of Trees and BSTs
+
+fizzBuzzTree() - Converts all items to a string, the string differs whether each item is divisble by 3, 5, or 15.
+
+![PseudoQ whiteboard](./assets/challenge-18.png)
+
 ## Attribution
 
-Collaborated with Jordan Covington and Joseph Davitt. Also relied on examples provided by educational materials from Colt Steele.
+Collaborated with Jordan Covington, Joseph Davitt, Ashwini Uppal, Steve Gant, and Brenda Jow. Also relied on examples provided by educational materials from Colt Steele.

@@ -30,7 +30,6 @@ class KTree {
       let current = queue.shift();
       for (let i = 0; i < this.k; i++) {
         if (!current.children[i]) {
-          console.log('hitting no child logic');
           current.children[i] = tempNode;
           this.numNodes++;
           return this;
@@ -223,6 +222,18 @@ class BinarySearchTree extends BinaryTree {
     } return false;
   }
 }
+
+
+let testTree = new BinaryTree();
+testTree.add(10);
+testTree.add(1);
+testTree.add(5);
+testTree.add(7);
+testTree.add(9);
+testTree.add(15);
+
+// console.log(testTree);
+console.log(testTree.fizzBuzzTree().breadthFirst());
 
 
 module.exports = { BinaryTree, BinarySearchTree, Node, KTree };
