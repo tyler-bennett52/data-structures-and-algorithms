@@ -1,6 +1,6 @@
 'use strict';
 
-const { BinarySearchTree, BinaryTree, Node } = require('../index');
+const { BinarySearchTree, BinaryTree, Node, KTree } = require('../index');
 
 let testTree = new BinaryTree();
 testTree.root = new Node(10);
@@ -77,6 +77,30 @@ describe('Binary Tree', () => {
   it('Can do a breadth first search', () => {
     let results = testTree.breadthFirst();
     expect(results).toEqual([10, 5, 15, 1, 8, 17]);
+  });
+
+  // it('Can execute FizzBuzz on a K-ary Tree', () => {
+  //   const oldKTree = new KTree ();
+  //   oldKTree.add(15);
+  //   oldKTree.add(3);
+  //   oldKTree.add(5);
+  //   oldKTree.add(2);
+  //   expect(oldKTree.root.value).toBe(15);
+  //   // expect(oldKTree.root.children).toEqual([1, 2, 3]);
+  //   expect(oldKTree.numNodes).toBe(4);
+  //   // const newKTree = oldKTree.fizzBuzzTree();
+  //   // expect(newKTree).toBe('wrong');
+  // });
+
+  // it('Binary Tree add funciton', () => {
+  //   let tempTree = new BinaryTree();
+  //   tempTree.add(1);
+  //   expect(tempTree.breadthFirst()).toBe('wrong');
+  // });
+
+  it('Can execute FizzBuzz on a Binary tree', () => {
+    let fizzyTree = testTree.fizzBuzzTree();
+    expect(fizzyTree.breadthFirst()).toEqual(["Buzz", "Buzz", "FizzBuzz", "1", "8", "17"]);
   });
 
 });
